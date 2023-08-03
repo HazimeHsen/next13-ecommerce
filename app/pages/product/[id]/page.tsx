@@ -7,8 +7,10 @@ import ProductDetailsCarousel from "@/app/components/ProductComponents/ProductDe
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { clothesData } from "@/data";
 import Button from "@/app/components/Button";
-
-const ProductDetails = ({ params }: Params) => {
+interface ProductDetailsProps {
+  params: Params;
+}
+const ProductDetails: React.FC<ProductDetailsProps> = ({ params }) => {
   const { id } = params;
   const data = clothesData.filter((pro) => pro.id === id);
   const starsStyle = {
